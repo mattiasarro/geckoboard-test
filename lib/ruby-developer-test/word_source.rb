@@ -2,6 +2,7 @@ class WordSource
   def initialize(content="")
     @words = content.split(",").map(&:strip).reject(&:empty?)
     @words_cnt = Hash.new(0)
+    
     @idx = 0
   end
   
@@ -20,7 +21,12 @@ class WordSource
   end
 
   def top_5_consonants
-    raise NotImplementedError, "You should implement this method"
+    return @top_5_consonants if @top_5_consonants
+    run
+    sorted = Hash[chars_cnt.sort_by {|char,count| [-count, char]}]
+    puts sorted.inspect
+    top_chars = sorted.keys[0,5]
+    @top_5_consonants = Array.new(5) {|i| top_chars[i] }
   end
 
   def top_5_words
@@ -38,4 +44,16 @@ class WordSource
   def callback
     raise NotImplementedError, "You should implement this method"
   end
+  
+  private
+    # cold be memoized but only called once
+    def chars_cnt 
+      Hash.new(0).tap do |occurrences|
+        @words_cnt.each do |word,cnt|
+          word.each_char do |char|
+            occurrences[char] += cnt
+          end
+        end
+      end
+    end
 end

@@ -38,6 +38,13 @@ describe WordSource, "#WordSource" do
       expect { WordSource.new("lorem,ipsum,ipsum") }.to_not raise_error
     end
     
+    describe "top 5 consonants" do
+      it "should get top consonants" do
+        source = WordSource.new "lorem,ipsum,ipsum"
+        source.top_5_consonants.should == ["m","i","p","s","u"]
+      end
+    end
+    
     describe "top 5 words" do
       it "should order words by nr of occurrences" do
         source = WordSource.new "lorem,ipsum,ipsum"
