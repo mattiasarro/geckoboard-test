@@ -38,17 +38,22 @@ describe WordSource, "#WordSource" do
       expect { WordSource.new("lorem,ipsum,ipsum") }.to_not raise_error
     end
     
-    describe "top 5 consonants" do
+    describe "top_5_consonants()" do
       it "should get top consonants" do
         source = WordSource.new "lorem,ipsum,ipsum"
-        source.top_5_consonants.should == ["m","i","p","s","u"]
+        source.top_5_consonants.should == ["m","p","s","l","r"]
       end
     end
     
-    describe "top 5 words" do
+    describe "top_5_words()" do
       it "should order words by nr of occurrences" do
         source = WordSource.new "lorem,ipsum,ipsum"
         source.top_5_words[0].should == "ipsum"
+      end
+      
+      it "should order same-frequency words alphabetically" do
+        source = WordSource.new "all,work,no,play,makes,jack,a,dull,boy, all,work"
+        source.top_5_words.should == ["all", "work", "a", "boy", "dull"]
       end
       
       it "should fill array items with nil" do

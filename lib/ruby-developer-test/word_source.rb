@@ -2,7 +2,6 @@ class WordSource
   def initialize(content="")
     @words = content.split(",").map(&:strip).reject(&:empty?)
     @words_cnt = Hash.new(0)
-    
     @idx = 0
   end
   
@@ -21,20 +20,13 @@ class WordSource
   end
 
   def top_5_consonants
-    return @top_5_consonants if @top_5_consonants
-    run
-    sorted = Hash[chars_cnt.sort_by {|char,count| [-count, char]}]
-    puts sorted.inspect
-    top_chars = sorted.keys[0,5]
-    @top_5_consonants = Array.new(5) {|i| top_chars[i] }
+    consonants = /[b-df-hj-np-tv-z]/i
+    @chars_cnt ||= chars_cnt.select { |char,_| char =~ consonants }
+    @top_5_consonants ||= top(5, @chars_cnt)
   end
 
   def top_5_words
-    return @top_5_words if @top_5_words
-    run
-    sorted = Hash[@words_cnt.sort_by {|word,count| -count}]
-    top_words = sorted.keys[0,5]
-    @top_5_words = Array.new(5) {|i| top_words[i] }
+    @top_5_words ||= top(5, @words_cnt)
   end
 
   def count
@@ -46,11 +38,21 @@ class WordSource
   end
   
   private
-    # cold be memoized but only called once
-    def chars_cnt 
+    def top(nr, items)
+      run
+      sorted = Hash[items.sort_by {|item,count| [-count, item]}]
+      top_words = sorted.keys[0,5]
+      @top_5_words = Array.new(5) {|i| top_words[i] }
+    end
+    
+    def chars_cnt
+      run
       Hash.new(0).tap do |occurrences|
         @words_cnt.each do |word,cnt|
           word.each_char do |char|
+            # could do checking for consonants here,
+            # though that would give no substantial performance gain:
+            # we're still looping through each char
             occurrences[char] += cnt
           end
         end
