@@ -38,6 +38,18 @@ describe WordSource, "#WordSource" do
       expect { WordSource.new("lorem,ipsum,ipsum") }.to_not raise_error
     end
     
+    describe "top 5 words" do
+      it "should order words by nr of occurrences" do
+        source = WordSource.new "lorem,ipsum,ipsum"
+        source.top_5_words[0].should == "ipsum"
+      end
+      
+      it "should fill array items with nil" do
+        source = WordSource.new "lorem,ipsum,ipsum"
+        source.top_5_words.should == ["ipsum", "lorem", nil, nil, nil]
+      end
+    end
+    
     describe "next_word()" do
       it "should return the next word as a string" do
         source = WordSource.new "lorem,ipsum,ipsum"
