@@ -1,6 +1,6 @@
 class LoremIpsumWordSource < WordSource
   
-  def initialize(location)
+  def initialize(location="lorem_ipsum.txt")
     @words = File.read(location).split(",").map(&:strip)
   end
   
