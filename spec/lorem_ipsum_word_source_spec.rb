@@ -13,11 +13,13 @@ describe LoremIpsumWordSource, "#WordSource" do
   
   it "should take its input by default from lorem_ipsum.txt" do
     source = LoremIpsumWordSource.new
+    source.run
     source.count.should == 4946
   end
   
   it "should read the comma-separated words in the file into an array" do
     source, f = source_from_string "lorem,ipsum"
+    source.run
     source.count.should == 2
     f.unlink
   end

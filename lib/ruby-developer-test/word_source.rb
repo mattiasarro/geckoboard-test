@@ -1,14 +1,18 @@
 class WordSource
   def initialize(content="")
     @words = content.split(",").map(&:strip).reject(&:empty?)
+    @idx = 0
   end
   
   def run
-    raise NotImplementedError, "You should implement this method"
+    while next_word
+    end
   end
 
   def next_word
-    raise NotImplementedError, "You should implement this method"
+    ret = @words[@idx]
+    @idx = @idx + 1 if ret
+    ret
   end
 
   def top_5_consonants
@@ -20,7 +24,7 @@ class WordSource
   end
 
   def count
-    @words.size
+    @idx
   end
 
   def callback
