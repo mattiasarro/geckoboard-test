@@ -2,6 +2,7 @@ class WordSource
   def initialize(content="")
     @words = content.split(",").map(&:strip).reject(&:empty?)
     @words_cnt = Hash.new(0)
+    @callbacks = Hash.new
     @idx = 0
   end
   
@@ -15,6 +16,7 @@ class WordSource
       if word
         @words_cnt[word] += 1
         @idx = @idx + 1
+        callback(word)
       end
     end
   end
@@ -32,9 +34,15 @@ class WordSource
   def count
     @idx
   end
-
-  def callback
-    raise NotImplementedError, "You should implement this method"
+  
+  def register_callback(on_word, callback_lambda)
+    @callbacks[on_word] = callback_lambda
+  end
+  
+  def callback(on_word)
+    if (callback = @callbacks[on_word])
+      callback.call
+    end
   end
   
   private

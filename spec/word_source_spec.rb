@@ -106,6 +106,20 @@ describe WordSource, "#WordSource" do
       end
     end
     
+    describe "callback()" do
+      it "should execute the defined callback when encountering the word" do
+        CallbackExecuted = Class.new(Exception)
+        callback = -> { raise CallbackExecuted }
+        
+        source = WordSource.new "Lorem,ipsum,dolor,sit,amet"
+        source.register_callback "ipsum", callback
+        
+        expect { source.next_word }.to_not raise_error(CallbackExecuted)
+        expect { source.next_word }.to raise_error(CallbackExecuted)
+        expect { source.next_word }.to_not raise_error(CallbackExecuted)
+      end
+    end
+    
     describe "parsing the input string" do
       it "should parse the correct number of words" do
         source = WordSource.new "lorem,ipsum"
