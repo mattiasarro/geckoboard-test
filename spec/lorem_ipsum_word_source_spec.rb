@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'tempfile'
 
 describe LoremIpsumWordSource, "#WordSource" do
-  
+  include Helpers
   it "should take valid text file location as initialization argument" do
     source = LoremIpsumWordSource.new("lorem_ipsum.txt")
   end
@@ -20,18 +20,5 @@ describe LoremIpsumWordSource, "#WordSource" do
     source, f = source_from_string "lorem,ipsum"
     source.count.should == 2
     f.unlink
-  end
-  
-  it "should reject empty strings" do
-    source, f = source_from_string "lorem,ipsum,,"
-    source.count.should == 2
-    f.unlink
-  end
-  
-  def source_from_string(mock_data)
-    f = Tempfile.new("temp") 
-    f.write(mock_data)
-    f.close
-    return LoremIpsumWordSource.new(f.path), f
   end
 end
