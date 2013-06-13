@@ -1,3 +1,7 @@
-require "ruby-developer-test/word_source"
-require "ruby-developer-test/lorem_ipsum_word_source"
-
+require 'rubygems'
+require 'bundler/setup'
+require 'twitter'
+require 'config/twitter'
+require 'ruby-developer-test/word_source'
+require 'ruby-developer-test/lorem_ipsum_word_source'
+require 'ruby-developer-test/twitter_word_source'

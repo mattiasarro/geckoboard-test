@@ -1,3 +1,4 @@
+require 'webmock/rspec'
 require './lib/ruby-developer-test.rb'
 require './spec/helpers.rb'
 

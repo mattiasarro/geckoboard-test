@@ -1,0 +1,31 @@
+HTTP/1.1 200 OK
+Date: Wed, 12 Jun 2013 23:41:31 GMT
+Server: Apache
+Cache-control: no-cache, no-store
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><meta http-equiv="refresh" content="0;url=http://advancedsearch2.virginmedia.com/main?InterceptSource=0&ClientLocation=uk&ParticipantID=jqlc435patgs4w79dx7g33u8otdryt35&FailureMode=1&SearchQuery=&FailedURI=http%3A%2F%2Fcurl%2F%3Fid%3D144980704973955072&AddInType=4&Version=2.1.8-1.90base&Referer=&Implementation=0"/><script type="text/javascript">url="http://advancedsearch2.virginmedia.com/main?InterceptSource=0&ClientLocation=uk&ParticipantID=jqlc435patgs4w79dx7g33u8otdryt35&FailureMode=1&SearchQuery=&FailedURI=http%3A%2F%2Fcurl%2F%3Fid%3D144980704973955072&AddInType=4&Version=2.1.8-1.90base&Referer=&Implementation=0";if(top.location!=location){var w=window,d=document,e=d.documentElement,b=d.body,x=w.innerWidth||e.clientWidth||b.clientWidth,y=w.innerHeight||e.clientHeight||b.clientHeight;url+="&w="+x+"&h="+y;}window.location.replace(url);</script></head><body></body></html>HTTP/1.1 200 OK
+cache-control: no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+content-length: 2578
+content-type: application/json;charset=utf-8
+date: Wed, 12 Jun 2013 23:41:31 GMT
+expires: Tue, 31 Mar 1981 05:00:00 GMT
+last-modified: Wed, 12 Jun 2013 23:41:31 GMT
+pragma: no-cache
+server: tfe
+set-cookie: lang=en
+set-cookie: guest_id=v1%3A137108049162240186; Domain=.twitter.com; Path=/; Expires=Fri, 12-Jun-2015 23:41:31 UTC
+status: 200 OK
+x-access-level: read
+x-frame-options: SAMEORIGIN
+x-rate-limit-limit: 180
+x-rate-limit-remaining: 178
+x-rate-limit-reset: 1371081384
+x-transaction: c0d4667fed040be2
+x-xss-protection: 1; mode=block
+
+{"created_at":"Fri Dec 09 03:24:28 +0000 2011","id":144980704973955072,"id_str":"144980704973955072","text":"lorem,ipsum,ipsum". \n\nhttp:\/\/t.co\/RlcRubEI via @jackkinsella","source":"\u003ca href=\"http:\/\/twitter.com\/tweetbutton\" rel=\"nofollow\"\u003eTweet Button\u003c\/a\u003e","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":14820811,"id_str":"14820811","name":"Mattias Arro","screen_name":"mattiasarro","location":"United Kingdom","description":"Ruby on Rails developer studying Computer Science at the University of Southampton.","url":"http:\/\/t.co\/xylGJUdVcB","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/xylGJUdVcB","expanded_url":"http:\/\/mattias-arro.apparat.ee","display_url":"mattias-arro.apparat.ee","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":33,"friends_count":28,"listed_count":1,"created_at":"Sun May 18 14:02:30 +0000 2008","favourites_count":0,"utc_offset":7200,"time_zone":"Tallinn","geo_enabled":false,"verified":false,"statuses_count":7,"lang":"en","contributors_enabled":false,"is_translator":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/a0.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/si0.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1163148492\/mattias_arro_bw_normal.jpg","profile_image_url_https":"https:\/\/si0.twimg.com\/profile_images\/1163148492\/mattias_arro_bw_normal.jpg","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"urls":[{"url":"http:\/\/t.co\/RlcRubEI","expanded_url":"http:\/\/www.jackkinsella.ie\/2011\/12\/05\/janki-method.html","display_url":"jackkinsella.ie\/2011\/12\/05\/jan\u2026","indices":[94,114]}],"user_mentions":[{"screen_name":"jackkinsella","name":"Jack Kinsella","id":87515384,"id_str":"87515384","indices":[119,132]}]},"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}
